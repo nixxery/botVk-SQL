@@ -5,38 +5,36 @@ connect = sqlite3.connect('db.sqlite')
 # Создание курсора для подключения
 cursor = connect.cursor()
 
-# Для работы создаём запрос query
-query = """
-CREATE TABLE carsbook (
-    id INT PRIMARY,
-    mark TEXT,
-    color TEXT,
-    number TEXT
-);
+# query = """
+# CREATE TABLE answer(
+#     id  INT PRIMARY KEY,
+#     msg TEXT,
+#     answ TEXT
+# )
+# """
+# cursor.execute(query)
+
+
+connect = sqlite3.connect('db.sqlite')
+cursor = connect.cursor()
+
+query1 = """
+CREATE TABLE groups(
+    id INT PRIMARY KEY AUTOINCREMENT,
+    groupName TEXT
+)
 """
 
-query = """
-INSERT INTO carsbook (id, mark, color, number) VALUES (100, 'Toyota', 'red', "М123РС77"),
-(110, 'Nissan', 'gray', "А123МР78"),
-(120, 'Lexus', 'green', "О887ОО98"),
-(130, 'Mazda', 'cyan', "О666УА77"),
-(140, 'Mercedes', 'yellow', "М610КА77");
-
+query2 = """
+CREATE TABLE user(
+    id INT PRIMARY KEY,
+    FOREIGN KEY group_id REFERENCES groups id
+)
 """
-cursor.execute(query)
 
-query = """
-SELECT * FROM carsbook
-"""
-# Выполнение запроса через курсор
-cursor.execute(query)
 
-result = cursor.fetchall()
-print(result)
-# Сохранение состояния
+cursor.execute(query1)
+connect.commit()
+cursor.execute(query2)
 connect.commit()
 
-
-
-# Закрываем подключение к БД
-connect.close()
