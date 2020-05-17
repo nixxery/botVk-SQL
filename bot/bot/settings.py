@@ -25,7 +25,7 @@ SECRET_KEY = '&ys5t!-qgypu4^8@1me3c-h(w&wq(9&d+eodrf)zeunrrl=oo)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bcd2bc17.ngrok.io']
+ALLOWED_HOSTS = ['290abd24.ngrok.io']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'bot.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["./botvk/templates/"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
