@@ -25,7 +25,7 @@ SECRET_KEY = '&ys5t!-qgypu4^8@1me3c-h(w&wq(9&d+eodrf)zeunrrl=oo)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['290abd24.ngrok.io']
+ALLOWED_HOSTS = ["neut.serveo.net", "127.0.0.1", "localhost"]
 
 
 # Application definition
